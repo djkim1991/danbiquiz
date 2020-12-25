@@ -1,4 +1,4 @@
-package com.danbi.danbiquiz.domain.entity;
+package com.danbi.danbiquiz.domain.entity.quiz;
 
 import com.danbi.danbiquiz.domain.entity.common.BaseEntity;
 import lombok.*;

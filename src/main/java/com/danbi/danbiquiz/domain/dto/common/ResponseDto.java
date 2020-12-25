@@ -1,4 +1,4 @@
-package com.danbi.danbiquiz.domain.dto;
+package com.danbi.danbiquiz.domain.dto.common;
 
 import lombok.Builder;
 import lombok.Getter;

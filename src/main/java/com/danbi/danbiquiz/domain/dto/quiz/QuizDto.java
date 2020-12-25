@@ -1,4 +1,4 @@
-package com.danbi.danbiquiz.domain.dto;
+package com.danbi.danbiquiz.domain.dto.quiz;
 
 import lombok.*;
 

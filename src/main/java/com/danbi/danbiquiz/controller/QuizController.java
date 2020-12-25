@@ -1,6 +1,6 @@
 package com.danbi.danbiquiz.controller;
 
-import com.danbi.danbiquiz.domain.dto.ResponseDto;
+import com.danbi.danbiquiz.domain.dto.common.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
