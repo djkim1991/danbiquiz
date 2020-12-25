@@ -22,7 +22,7 @@ public class Quiz extends BaseEntity {
     @Column(name = "quiz_name")
     private String quizName;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "quiz_id")
     private List<QuizQuestion> quizQuestions;
 }

@@ -4,6 +4,7 @@ import com.danbi.danbiquiz.domain.entity.common.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,5 +23,9 @@ public class QuizQuestion extends BaseEntity {
     private String displayText;
 
     @Column(name = "display_order")
-    private String displayOrder;
+    private Integer displayOrder;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "quiz_question_id")
+    private List<QuizAnswer> quizAnswers;
 }

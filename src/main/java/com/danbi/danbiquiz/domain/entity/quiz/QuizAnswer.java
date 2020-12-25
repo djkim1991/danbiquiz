@@ -4,7 +4,7 @@ import com.danbi.danbiquiz.domain.entity.common.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -23,12 +23,8 @@ public class QuizAnswer extends BaseEntity {
     private String displayText;
 
     @Column(name = "display_order")
-    private String displayOrder;
+    private Integer displayOrder;
 
     @Column(name = "answer_yn")
     private Boolean answerYn;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "quiz_question_id")
-    private List<QuizAnswer> quizAnswers;
 }
