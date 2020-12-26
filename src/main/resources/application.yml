@@ -14,7 +14,7 @@ spring:
         format_sql: true
 
   datasource:
-    url: jdbc:mysql://localhost:3306/danquiz?useTimezone=true&serverTimezone=UTC&elideSetAutoCommits=true
+    url: jdbc:mysql://localhost:3306/danquiz?elideSetAutoCommits=true&useUnicode=true&characterEncoding=utf8
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: 1225

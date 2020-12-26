@@ -13,28 +13,28 @@ public class QuizController {
     private final QuizService quizService;
 
     @GetMapping("/quizzes")
-    public ResponseDto getBoards() {
+    public ResponseDto getQuizzes() {
         return ResponseDto.builder()
                 .data(quizService.getQuizzes())
                 .build();
     }
 
     @GetMapping("/quizzes/{id}")
-    public ResponseDto getBoard(@PathVariable Long id) {
+    public ResponseDto getQuiz(@PathVariable Long id) {
         return ResponseDto.builder()
                 .data(quizService.getQuiz(id))
                 .build();
     }
 
     @PostMapping("/quizzes")
-    public ResponseDto postBoard(@ModelAttribute QuizDto quizDto) {
+    public ResponseDto postQuiz(@ModelAttribute QuizDto quizDto) {
         quizService.saveQuiz(quizDto);
 
         return ResponseDto.builder().build();
     }
 
     @DeleteMapping("/quizzes/{id}")
-    public ResponseDto deleteBoard(@PathVariable Long id) {
+    public ResponseDto deleteQuiz(@PathVariable Long id) {
         quizService.deleteQuiz(id);
 
         return ResponseDto.builder().build();
