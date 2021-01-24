@@ -1,20 +1,51 @@
-#dev
-run:
-  mode: dev
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://danbi-dev.chnszsh3ajcy.ap-northeast-2.rds.amazonaws.com:3306/danquiz?elideSetAutoCommits=true&useUnicode=true&characterEncoding=utf8
+    username: admin
+    password: danbi0228
 
+---
+#dev
 spring:
   config:
     activate:
       on-profile: dev
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/danquiz?elideSetAutoCommits=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1225
+
+run:
+  mode: dev
+
+---
+#beta
+spring:
+  config:
+    activate:
+      on-profile: beta
 
   jpa:
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
   datasource:
-    url: jdbc:mysql://localhost:3306/danquiz?elideSetAutoCommits=true&useUnicode=true&characterEncoding=utf8
     driverClassName: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 1225
+    url: jdbc:mysql://danbi-dev.chnszsh3ajcy.ap-northeast-2.rds.amazonaws.com:3306/danquiz?elideSetAutoCommits=true&useUnicode=true&characterEncoding=utf8
+    username: admin
+    password: danbi0228
+
+run:
+  mode: beta
